@@ -29,8 +29,9 @@ function playRound (playerChoice, computerChoice) {
     //If the player chooses Rock, and the computer scissors, the player wins.
     //If the player chooses Rock, and the computer paper, the computer wins.
     //If the player chooses Rock, and the computer rock, it's a tie.
-
-    if (playerChoice.toLowerCase() === "rock") {
+    if (playerChoice === null || undefined){
+        return "You cancelled."
+    } else if (playerChoice.toLowerCase() === "rock") {
         switch (computerChoice) {
             case "Rock":
                 return "Rock and Rock! It's a tie!";
@@ -79,4 +80,56 @@ function playRound (playerChoice, computerChoice) {
         return "Please enter a valid option. Either Rock, Paper or Scissors!"
     }
 
+}
+/* We need to create a function that plays the actual game. It will be five rounds.
+In each round, we will call the playRound function and we'll declare a winner. 
+If the player wins 5 rounds in total, he wins. 
+If the computer wins 5 rounds in total, the player loses.
+The game ends once those 5 wins have been acheived. 
+*/
+
+//We create the game function
+
+function game() {
+
+    //We create two score variables, computerScore and playerScore.
+    let computerScore = 3;
+    let playerScore = 1;
+    //Inside the game function, we create a loop.
+    //The loop finishes when either the computer score or the player score reaches 5.
+    for (; (playerScore <= 4 && computerScore <= 4); ) {
+
+        //We call the computerPlay function.   
+        //We call a prompt for the user to enter their choice.
+        let computerChoice = computerPlay();
+        let playerChoice = prompt("Please enter your choice: Rock, Paper or Scissors?", "");
+       
+        //We play a round using both values.
+        let roundWinner = playRound(playerChoice, computerChoice);
+
+        //We print the result
+        //We add a score point to the winner.  
+        console.log(roundWinner);
+        if (roundWinner.includes("lose")) {
+            ++computerScore;
+            console.log("Sorry, you lost this round!");
+        } else if (roundWinner.includes("win")) {
+            ++playerScore;
+            console.log("Congratulations, you won this round!")
+        } else if (roundWinner.includes("tie")) {
+            console.log("The game was a tie!")
+        } else if (roundWinner.includes("cancelled")) {
+            return "Cancelled the game."
+        }
+        console.log("Your score is " + playerScore);
+        console.log("The Machine's score is " + computerScore);
+    }
+
+//When the loop is done, we return the winner.
+    console.log("We are finished!");
+    if (playerScore === 5) {
+        return "Congratulations! You won this time!";
+    } else if (computerScore === 5) {
+        return "Sorry, you lost this time!";
+    }
 }
