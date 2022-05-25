@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.text  {
+    color: white;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(35, 38, 35);
+    height: 100px;
+}
