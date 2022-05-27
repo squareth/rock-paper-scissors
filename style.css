@@ -7,8 +7,6 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: black;
 }
 
 img {
@@ -20,25 +18,18 @@ img {
     color: white;
 }
 
-.main-section {
-    min-width: 1200px;
-    max-width: 1500px;
-
-}
-
 #header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:rgb(35, 38, 35);
     height: 100px;
-
 }
 
 #game-area {
     display: flex;
     justify-content: center;
-    height: 380px;
+    min-height: 380px;
     background-color: rgb(202, 202, 202);
     text-align: center;
    
@@ -59,6 +50,16 @@ img {
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
+}
+
+#under-the-score {
+    height: 35vh;
+    background-color:rgb(202, 202, 202);
+}
+
+#footer {
+    height: 50px;
+    background-color:rgb(35, 38, 35);
 }
 
 .img {
