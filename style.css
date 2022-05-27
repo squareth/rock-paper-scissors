@@ -32,7 +32,6 @@ img {
     min-height: 380px;
     background-color: rgb(202, 202, 202);
     text-align: center;
-   
 }
 
 .player-section {
@@ -42,6 +41,7 @@ img {
     align-items: center;
     border: double 5px rgb(100, 100, 100);
     width: 300px;
+    margin: 20px;
 }
 
 .mid-section {
@@ -110,4 +110,5 @@ img {
 .score {
     width: 300px;
     text-align: center;
+    margin: 20px;
 }
