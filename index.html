@@ -9,8 +9,36 @@
 </head>
 <script src = "script.js" ></script>
 <body>
-    <div id="header">
+    <div id="header" class="main-section">
         <h1 class="text">Rock Paper & Scissors</h1>
+    </div>
+    <div id="game-area" class="main-section">
+        <div class="player-section">
+            <div class="img"><img src="img/rps.png"></div>
+            <div class="button-container">
+                <button type="button" class="button">Rock</button>
+                <button type="button" class="button">Paper</button>
+                <button type="button" class="button">Scissors</button>
+                <h3> Choose wisely!</h3>
+            </div>
+        </div>
+        <div class="mid-section">
+            <p>You played X.
+                <br>
+                The computer played Y.
+            </p>
+            <p>You <b>WIN!/LOSE.</b></p>
+        </div>
+        <div class="player-section">
+            <div class="img"><img src="img/rps.png"></div>
+            <p>Computer</p>
+            <h3> - </h3>
+        </div> 
+    </div>
+    <div class="score-area main-section">
+        <p class="score">Your score: <b>X</b></p>
+        <div class="mid-section"></div>
+        <p class="score">Your score: <b>Y</b></p>
     </div>
 </body>
 </html>
