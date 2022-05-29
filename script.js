@@ -13,7 +13,7 @@ let computerScore = 0;
 let youPlayed = document.querySelector("#you-played");
 let compPlayed = document.querySelector("#comp-played");
 
-let midSection = document.querySelector('#mid-section');
+let midSection = document.querySelector('.mid-section');
 
 //Add event listeners for the three buttons
 const buttons = document.querySelectorAll('.button');
@@ -41,6 +41,7 @@ function playGame(e){
     }
     roundWonBy.textContent = roundWinner;
     midSection.appendChild(roundWonBy);
+
 
 }
 
