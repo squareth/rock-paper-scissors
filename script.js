@@ -10,6 +10,9 @@
 let playerScore = 0;
 let computerScore = 0;
 
+let yourScore = document.querySelector('#your-score');
+let compScore = document.querySelector('#comp-score');
+
 let youPlayed = document.querySelector("#you-played");
 let compPlayed = document.querySelector("#comp-played");
 
@@ -18,7 +21,7 @@ let midSection = document.querySelector('.mid-section');
 //Add event listeners for the three buttons
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(function(bttn){
-    bttn.addEventListener('click', playGame)
+    bttn.addEventListener('click', playGame);
 })
 
 //Create a function that calls for a playRound, then prints the result
@@ -37,12 +40,24 @@ function playGame(e){
     if (!roundWonBy){
         roundWonBy = document.createElement("p");
         roundWonBy.setAttribute('id', 'round-won-by');
-        console.log(roundWonBy);
     }
     roundWonBy.textContent = roundWinner;
     midSection.appendChild(roundWonBy);
-
-
+    addScore(roundWinner);
+}
+//Add function to find out the roundWinner and change the score.
+function addScore(roundWinner) {
+    if (roundWinner.includes("lose")) {
+        ++computerScore;
+        console.log(computerScore + "-" + playerScore);
+    } else if (roundWinner.includes("win")) {
+        ++playerScore;
+        console.log(computerScore + "-" + playerScore);
+    } else if (roundWinner.includes("tie")) {
+        console.log(computerScore + "-" + playerScore);
+    }
+    yourScore.textContent = playerScore;
+    compScore.textContent = computerScore;
 }
 
 /*First we need to create a function called computerPlay that randomnly returns
