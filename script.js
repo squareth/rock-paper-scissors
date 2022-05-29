@@ -10,7 +10,10 @@
 let playerScore = 0;
 let computerScore = 0;
 
-let youPlayed = document.querySelector
+let youPlayed = document.querySelector("#you-played");
+let compPlayed = document.querySelector("#comp-played");
+
+let midSection = document.querySelector('#mid-section');
 
 //Add event listeners for the three buttons
 const buttons = document.querySelectorAll('.button');
@@ -28,7 +31,16 @@ function playGame(e){
     console.log(playerChoice);
     console.log(computerChoice);
     let roundWinner= playRound(playerChoice, computerChoice);
-    console.log(roundWinner);
+    youPlayed.textContent = playerChoice + ".";
+    compPlayed.textContent = computerChoice + ".";
+    let roundWonBy = document.querySelector('#round-won-by');
+    if (!roundWonBy){
+        roundWonBy = document.createElement("p");
+        roundWonBy.setAttribute('id', 'round-won-by');
+        console.log(roundWonBy);
+    }
+    roundWonBy.textContent = roundWinner;
+    midSection.appendChild(roundWonBy);
 
 }
 

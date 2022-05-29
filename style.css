@@ -44,7 +44,7 @@ img {
     margin: 20px;
 }
 
-.mid-section {
+#mid-section {
     width: 210px;
     display: flex;
     flex-direction: column;
