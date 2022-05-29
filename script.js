@@ -7,6 +7,7 @@
 //that was changed with a button.
 
 //Add variables for computerScore and playerScore
+let gameOn = true;
 let playerScore = 0;
 let computerScore = 0;
 
@@ -28,7 +29,7 @@ buttons.forEach(function(bttn){
 //in the HTML.
 
 function playGame(e){
-
+    if(gameOn) {
     let computerChoice = computerPlay();
     let playerChoice = e.target.id;
     console.log(playerChoice);
@@ -44,6 +45,7 @@ function playGame(e){
     roundWonBy.textContent = roundWinner;
     midSection.appendChild(roundWonBy);
     addScore(roundWinner);
+    }
 }
 //Add function to find out the roundWinner and change the score.
 function addScore(roundWinner) {
@@ -56,8 +58,30 @@ function addScore(roundWinner) {
     } else if (roundWinner.includes("tie")) {
         console.log(computerScore + "-" + playerScore);
     }
+    
     yourScore.textContent = playerScore;
     compScore.textContent = computerScore;
+
+    if (playerScore === 5 || computerScore === 5) {
+    finishGame();
+    }
+}
+
+function finishGame(){
+    const finishText = document.createElement('h3');
+    const finishTextWinner = document.createElement('b');
+    finishText.textContent = "You ";
+    if (playerScore === 5) {
+        finishTextWinner.textContent = "WON. CONGRATULATIONS!"
+    } else { finishTextWinner.textContent = "LOST. SORRY, TRY AGAIN!"
+    }
+    const finishContainer = document.querySelector("#finish-container");
+    const restartButton = document.createElement('button');
+    restartButton.textContent = "RESTART";
+    gameOn = false;
+    finishText.appendChild(finishTextWinner);
+    finishContainer.appendChild(finishText);
+    finishContainer.appendChild(restartButton);
 }
 
 /*First we need to create a function called computerPlay that randomnly returns
@@ -144,6 +168,7 @@ function playRound (playerChoice, computerChoice) {
     }
 
 }
+
 /* We need to create a function that plays the actual game. It will be five rounds.
 In each round, we will call the playRound function and we'll declare a winner. 
 If the player wins 5 rounds in total, he wins. 
