@@ -28,6 +28,8 @@ buttons.forEach(function(bttn){
 //Create a function that calls for a playRound, then prints the result
 //in the HTML.
 
+let roundWonBy; 
+
 function playGame(e){
     if(gameOn) {
     let computerChoice = computerPlay();
@@ -37,7 +39,7 @@ function playGame(e){
     let roundWinner= playRound(playerChoice, computerChoice);
     youPlayed.textContent = playerChoice + ".";
     compPlayed.textContent = computerChoice + ".";
-    let roundWonBy = document.querySelector('#round-won-by');
+    roundWonBy = document.querySelector('#round-won-by');
     if (!roundWonBy){
         roundWonBy = document.createElement("p");
         roundWonBy.setAttribute('id', 'round-won-by');
@@ -90,9 +92,15 @@ function finishGame(){
 }
 
 function restartGame(){
-    
+
+    finishContainer.removeChild(finishText);
+    finishContainer.removeChild(restartButton);
+    midSection.removeChild(roundWonBy);
     playerScore = 0;
     computerScore = 0;
+    yourScore.textContent = playerScore;
+    compScore.textContent = computerScore;
+    gameOn = true;
 
 }
 
