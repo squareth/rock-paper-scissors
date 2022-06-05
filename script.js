@@ -17,6 +17,9 @@ let midSection = document.querySelector('.mid-section');
 let playerImage = document.querySelector('#player-image');
 let compImage = document.querySelector('#comp-image');
 
+playerImage.ondragstart = () => { return false;};
+compImage.ondragstart = () => { return false;};
+
 //Add event listeners for the three buttons
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(function(bttn){
