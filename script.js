@@ -43,6 +43,7 @@ function playGame(e){
     youPlayed.textContent = playerChoice + ".";
     compPlayedT.textContent = "The computer played ";
     compPlayed.textContent = computerChoice + ".";
+    compImage.src = "img/" + computerChoice.toLowerCase() + ".png";
     roundWonBy = document.querySelector('#round-won-by');
     if (!roundWonBy){
         roundWonBy = document.createElement("p");
@@ -166,18 +167,21 @@ function playRound (playerChoice, computerChoice) {
 }
 
 function changePicture(e){
-    switch(e.target.id){
-        case "rock": 
-            console.log("rock");
-            playerImage.src = "img/rock.png";
-            break;
-        case "scissors":
-            console.log("scissors");
-            playerImage.src = "img/scissors.png";
-            break;
-        case "paper":
-            console.log("paper");
-            playerImage.src = "img/paper.png";
+    if(gameOn){
+        switch(e.target.id){
+          case "rock": 
+                console.log("rock");
+                playerImage.src = "img/rock.png";
+               break;
+            case "scissors":
+                console.log("scissors");
+                playerImage.src = "img/scissors.png";
+                break;
+           case "paper":
+              console.log("paper");
+                playerImage.src = "img/paper.png";
+        }
+        e.target.addEventListener('mouseleave', () => {if(gameOn){playerImage.src = "img/rps.png"}});
     }
-    e.target.addEventListener('mouseleave', () => playerImage.src = "img/rps.png");
+
 }
