@@ -67,21 +67,33 @@ function addScore(roundWinner) {
     }
 }
 
+let restartButton;
+let finishText;
+const finishContainer = document.querySelector("#finish-container");
+
 function finishGame(){
-    const finishText = document.createElement('h3');
-    const finishTextWinner = document.createElement('b');
+    finishText = document.createElement('h3');
     finishText.textContent = "You ";
+    const finishTextWinner = document.createElement('b');
     if (playerScore === 5) {
         finishTextWinner.textContent = "WON. CONGRATULATIONS!"
     } else { finishTextWinner.textContent = "LOST. SORRY, TRY AGAIN!"
     }
-    const finishContainer = document.querySelector("#finish-container");
-    const restartButton = document.createElement('button');
+    restartButton = document.createElement('button');
     restartButton.textContent = "RESTART";
     gameOn = false;
     finishText.appendChild(finishTextWinner);
     finishContainer.appendChild(finishText);
     finishContainer.appendChild(restartButton);
+
+    restartButton.addEventListener('click', restartGame);
+}
+
+function restartGame(){
+    
+    playerScore = 0;
+    computerScore = 0;
+
 }
 
 /*First we need to create a function called computerPlay that randomnly returns
