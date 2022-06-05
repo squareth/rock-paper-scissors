@@ -14,10 +14,14 @@ let compPlayedT = document.querySelector("#comp-played-t");
 
 let midSection = document.querySelector('.mid-section');
 
+let playerImage = document.querySelector('#player-image');
+let compImage = document.querySelector('#comp-image');
+
 //Add event listeners for the three buttons
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(function(bttn){
     bttn.addEventListener('click', playGame);
+    bttn.addEventListener('mouseover', changePicture);
 })
 
 //Create a function that calls for a playRound, then prints the result
@@ -156,4 +160,21 @@ function playRound (playerChoice, computerChoice) {
                 return "Scissors and Scissors! It's a tie!";            
         }
     }
+}
+
+function changePicture(e){
+    switch(e.target.id){
+        case "rock": 
+            console.log("rock");
+            playerImage.src = "img/rock.png";
+            break;
+        case "scissors":
+            console.log("scissors");
+            playerImage.src = "img/scissors.png";
+            break;
+        case "paper":
+            console.log("paper");
+            playerImage.src = "img/paper.png";
+    }
+    e.target.addEventListener('mouseleave', () => playerImage.src = "img/rps.png");
 }
