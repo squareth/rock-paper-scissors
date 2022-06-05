@@ -108,6 +108,7 @@ function restartGame(){
     youPlayedT.textContent = "Will you be able to defeat the machine?";
     compPlayedT.textContent = "Let's find out!";
     youPlayed.textContent = compPlayed.textContent = "";
+    playerImage.src = compImage.src = "img/rps.png";
     gameOn = true;
 
 }
