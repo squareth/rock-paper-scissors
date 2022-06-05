@@ -32,7 +32,7 @@ function playGame(e){
     console.log(playerChoice);
     console.log(computerChoice);
     let roundWinner= playRound(playerChoice, computerChoice);
-    youPlayedT.innerText = "You played ";
+    youPlayedT.textContent = "You played ";
     youPlayed.textContent = playerChoice + ".";
     compPlayedT.textContent = "The computer played ";
     compPlayed.textContent = computerChoice + ".";
@@ -97,6 +97,9 @@ function restartGame(){
     computerScore = 0;
     yourScore.textContent = playerScore;
     compScore.textContent = computerScore;
+    youPlayedT.textContent = "Will you be able to defeat the machine?";
+    compPlayedT.textContent = "Let's find out!";
+    youPlayed.textContent = compPlayed.textContent = "";
     gameOn = true;
 
 }
