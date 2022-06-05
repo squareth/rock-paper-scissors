@@ -9,6 +9,8 @@ let compScore = document.querySelector('#comp-score');
 
 let youPlayed = document.querySelector("#you-played");
 let compPlayed = document.querySelector("#comp-played");
+let youPlayedT = document.querySelector("#you-played-t");
+let compPlayedT = document.querySelector("#comp-played-t");
 
 let midSection = document.querySelector('.mid-section');
 
@@ -30,7 +32,9 @@ function playGame(e){
     console.log(playerChoice);
     console.log(computerChoice);
     let roundWinner= playRound(playerChoice, computerChoice);
+    youPlayedT.innerText = "You played ";
     youPlayed.textContent = playerChoice + ".";
+    compPlayedT.textContent = "The computer played ";
     compPlayed.textContent = computerChoice + ".";
     roundWonBy = document.querySelector('#round-won-by');
     if (!roundWonBy){

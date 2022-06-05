@@ -112,3 +112,8 @@ img {
     text-align: center;
     margin: 20px;
 }
+
+.inline {
+    font-size: 18px;
+    display: inline;
+}
