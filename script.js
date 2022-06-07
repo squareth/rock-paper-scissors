@@ -82,12 +82,15 @@ function finishGame(){
     finishText = document.createElement('h3');
     finishText.textContent = "You ";
     const finishTextWinner = document.createElement('b');
+    finishTextWinner.style.whiteSpace = "pre";
     if (playerScore === 5) {
-        finishTextWinner.textContent = "WON. CONGRATULATIONS!"
-    } else { finishTextWinner.textContent = "LOST. SORRY, TRY AGAIN!"
+        finishTextWinner.textContent = "WON. \r\n Congratulations!"
+    } else { finishTextWinner.textContent = "LOST. \r\n Sorry, try again!"
     }
     restartButton = document.createElement('button');
     restartButton.textContent = "RESTART";
+    restartButton.className= "button";
+    restartButton.style.marginTop = "15px";
     gameOn = false;
     finishText.appendChild(finishTextWinner);
     finishContainer.appendChild(finishText);

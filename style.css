@@ -117,3 +117,11 @@ img {
     font-size: 16px;
     display: inline;
 }
+
+#restart-button {
+    height: 30px;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 12px;
+    background-color:rgb(173, 173, 173)
+}
