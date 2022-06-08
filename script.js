@@ -40,9 +40,9 @@ function playGame(e){
     console.log(computerChoice);
     let roundWinner= playRound(playerChoice, computerChoice);
     youPlayedT.textContent = "You played ";
-    youPlayed.textContent = playerChoice + ".";
+    youPlayed.textContent = playerChoice.toUpperCase() + ".";
     compPlayedT.textContent = "The computer played ";
-    compPlayed.textContent = computerChoice + ".";
+    compPlayed.textContent = computerChoice.toUpperCase() + ".";
     compImage.src = "img/" + computerChoice.toLowerCase() + ".png";
     roundWonBy = document.querySelector('#round-won-by');
     if (!roundWonBy){
@@ -85,7 +85,10 @@ function finishGame(){
     finishTextWinner.style.whiteSpace = "pre";
     if (playerScore === 5) {
         finishTextWinner.textContent = "WON. \r\n Congratulations!"
-    } else { finishTextWinner.textContent = "LOST. \r\n Sorry, try again!"
+        finishTextWinner.style.color = "green";
+    } else { 
+        finishTextWinner.textContent = "LOST. \r\n Sorry, try again!"
+        finishTextWinner.style.color = "red";
     }
     restartButton = document.createElement('button');
     restartButton.textContent = "RESTART";

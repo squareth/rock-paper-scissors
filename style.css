@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: 'Shadows Into Light', cursive, Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
 
 body {
@@ -9,6 +13,9 @@ body {
     flex-direction: column;
 }
 
+h1 {
+    font-size: 50px;
+}
 img {
     height: 100%;
     width: 100%;
@@ -98,7 +105,7 @@ img {
 }
 
 .score-area {
-    height: 120px;
+    height: 150px;
     background-color:rgb(35, 38, 35);
     display: flex;
     color: white;
@@ -123,5 +130,6 @@ img {
     text-decoration: none;
     border-style: none;
     border-radius: 12px;
-    background-color:rgb(173, 173, 173)
+    background-color:rgb(173, 173, 173);
+    font-weight: bolder;
 }
