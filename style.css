@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
+:root {
+    --darkcolor: rgb(35, 38, 35);
+    --lightcolor: rgb(202, 202, 202);
+    --mediumcolor: rgb(96, 91, 110);
+    --buttoncolor: rgb(173, 173, 173);
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -29,7 +36,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgb(35, 38, 35);
+    background-color: var(--darkcolor);
     height: 100px;
 }
 
@@ -37,7 +44,7 @@ img {
     display: flex;
     justify-content: center;
     min-height: 380px;
-    background-color: rgb(202, 202, 202);
+    background-color: var(--lightcolor);
     text-align: center;
 }
 
@@ -46,7 +53,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: double 5px rgb(100, 100, 100);
+    border: double 5px var(--mediumcolor);
     width: 300px;
     margin: 20px;
 }
@@ -61,19 +68,19 @@ img {
 
 #under-the-score {
     height: 35vh;
-    background-color:rgb(202, 202, 202);
+    background-color:var(--lightcolor);
 }
 
 #footer {
     height: 50px;
-    background-color:rgb(35, 38, 35);
+    background-color:var(--darkcolor);
 }
 
 .img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(100, 100, 100);
+    background-color: var(--mediumcolor);
     height: 150px;
     width: 125px;
     border-radius: 12%;
@@ -84,7 +91,7 @@ img {
     padding: 3px;
     text-decoration: none;
     border-style: none;
-    background-color:rgb(173, 173, 173);
+    background-color:var(--buttoncolor);
     border-radius: 15px;
     min-width: 65px;
     min-height: 25px;
@@ -99,19 +106,19 @@ img {
     padding: 3px;
     text-decoration: none;
     border-style: none;
-    background-color:rgb(173, 173, 173);
+    background-color:var(--buttoncolor);
     border-radius: 15px;
     padding: 1px 20px
 }
 
 .score-area {
     height: 150px;
-    background-color:rgb(35, 38, 35);
+    background-color:var(--darkcolor);
     display: flex;
     color: white;
     align-items: center;
     justify-content: center;
-    border-top: solid 10px rgb(108, 105, 116);
+    border-top: solid 10px var(--mediumcolor);
 }
 
 .score {
@@ -130,6 +137,6 @@ img {
     text-decoration: none;
     border-style: none;
     border-radius: 12px;
-    background-color:rgb(173, 173, 173);
+    background-color:var(--buttoncolor);
     font-weight: bolder;
 }
